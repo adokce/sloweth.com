@@ -19,11 +19,42 @@ import {
   useColorScheme,
 } from "react-native";
 import Switch from "expo-dark-mode-switch";
+import {
+  gray,
+  blue,
+  red,
+  green,
+  grayDark,
+  blueDark,
+  redDark,
+  greenDark,
+} from "@radix-ui/colors";
 
-const themeDark = makeTheme({});
-const themeLight = makeTheme({});
+const lightColors = {
+  ...gray,
+  ...blue,
+  ...red,
+  ...green,
+};
+const darkColors = {
+  ...grayDark,
+  ...blueDark,
+  ...redDark,
+  ...greenDark,
+};
+
+const themeDark = makeTheme({
+  colors: darkColors,
+});
+
+export const themeLight = {
+  ...themeDark,
+  colors: lightColors,
+};
 
 export default function App() {
+  console.log({ darkColors, lightColors });
+
   const sumAmountInCurrency = sumCoinsCurrencyAmounts(coinsList).toFixed(2);
 
   // const currentTheme =
@@ -146,6 +177,7 @@ export default function App() {
 const Shell = styled(SafeAreaView)({
   flex: 1,
   paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  backgroundColor: "blue6",
   // paddingLeft: 20,
   // paddingRight: 20,
   // backgroundColor: "red",

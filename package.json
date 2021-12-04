@@ -7,6 +7,7 @@
     "web": "expo start --web --tunnel"
   },
   "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
     "dripsy": "^3.5.3",
     "expo": "~43.0.2",
     "expo-dark-mode-switch": "^0.0.2",
